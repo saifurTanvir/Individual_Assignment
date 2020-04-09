@@ -2,7 +2,7 @@
 <h3>Admin home</h3>
 <table border="1pxd" style="text-align: center">
     <tr>
-        <td><a href="">Buses List</a></td>
+        <td><a href="{{route('admin.buses')}}">Buses List</a></td>
         <td><a href="">Add Bus</a></td>
         <td>
             <input type="text" name="searchBus" id="searchBus">
