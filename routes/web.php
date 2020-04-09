@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//login
+Route::get('/system/supportstaff/add', 'LoginController@index')->name('login');
+Route::post('/system/supportstaff/add', 'LoginController@verify');
+
+//admin
+Route::get('/system/supportstaff/admin', 'AdminController@index')->name('admin.index');
+
+
+//manager
+Route::get('/system/supportstaff/manager', 'ManagerController@index')->name('manager.index');
+
