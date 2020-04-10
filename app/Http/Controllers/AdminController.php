@@ -19,4 +19,16 @@ class AdminController extends Controller
             ->with('buses', $buses);
         
     }
+
+    public function searchBus($id){
+        error_log($id);
+        $bus = Bus::where('busId', $id)->get();
+        error_log($bus);
+        return response()->json(['success'=> $bus]);
+    }
+
+    public function editBus($id){
+        return view('Admin.editBus');
+
+    }
 }
