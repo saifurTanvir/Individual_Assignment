@@ -1,6 +1,7 @@
 <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
       </script>
 <h1>These are Buses...</h1>
+{{session('updateBus')}}
 <script>
     function f1(){
         $data =  $('#searchBus1').val();
@@ -19,6 +20,7 @@
                 + "<th>" + "Location" + "</th>"
                 + "<th>" + "Seat_row" + "</th>"
                 + "<th>" + "Seat_column" + "</th>"
+                + "<th>" + "Company" + "</th>"
             + "</tr>"
             + "<tr>"
                 + "<td>" +response.success[0]['operation']+ "</td>"
@@ -26,6 +28,7 @@
                 + "<td>" +response.success[0]['location']+ "</td>"
                 + "<td>" +response.success[0]['seat_row']+ "</td>"
                 + "<td>" +response.success[0]['seat_column']+ "</td>"
+                + "<td>" +response.success[0]['company']+ "</td>"
             + "</tr>";
 
 
@@ -54,6 +57,7 @@
         <th>Location<th>
        <th>Seat_row<th>
        <th>Seat_column<th>
+       <th>Company<th>
         <th>Action<th>
     </tr>
 
@@ -65,9 +69,10 @@
             <td>{{$bus['location']}}<td>
             <td>{{$bus['seat_row']}}<td>
             <td>{{$bus['seat_column']}}<td>
+            <td>{{$bus['company']}}<td>
             <td>
            
-                <a href="/system/supportstaff/admin/bus/edit/{{$bus['busId']}}">Edit</a> | 
+                <a href="/system/buses/{{$bus['busId']}}/edit">Edit</a> | 
                 <a href="#">Delete</a>
         
             <td>

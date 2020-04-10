@@ -8,7 +8,7 @@
             <td><input type="text" name="name"></td>
         </tr>
         <tr>
-            <td>Operator</td>
+            <td>Operator</td> 
             <td><input type="text" name="operator"></td>
         </tr>
         <tr>

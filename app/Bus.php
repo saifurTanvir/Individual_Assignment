@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Bus extends Model
 {
     public $timestamps = false;
-    protected $primarykey = 'busId';
+    protected $primaryKey = 'busId';
 }

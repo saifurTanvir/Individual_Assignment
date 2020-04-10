@@ -27,8 +27,8 @@ Route::get('/system/buses/add', 'AdminController@addBus')->name('admin.addBus');
 Route::post('/system/buses/add', 'AdminController@insertBus');
 
 //admin edit buss
-//Route::get('/system/supportstaff/admin/bus/edit/{id}', 'AdminController@editBus')->name('admin.buses');
-//Route::post('/system/supportstaff/admin/bus/edit/{id}', 'AdminController@updateBus');
+Route::get('/system/buses/{id}/edit', 'AdminController@editBus')->name('admin.editBuses');
+Route::patch('/system/buses/{id}/edit', 'AdminController@updateBus');
 //admin delete buss
 //Route::get('/system/supportstaff/admin/buses', 'AdminController@buses')->name('admin.buses');
 
