@@ -5,17 +5,17 @@
     function f1(){
         $data =  $('#searchBus1').val();
         $.ajax({
-            type: 'get',
+            type: 'post',
             url: "/system/buses/ajax/"+$data,
+             data : {
+                       "_token": "{{ csrf_token() }}"  
+                    },
+                    datatype : 'html',
             success: function(response){
-            //alert("bak");
-            //var obj = JSON.parse(response);
-            //$('#id').html(response.success[0]['name']);
-
 
            var data =  "<tr>"
                 + "<th>" + "Operator" + "</th>"
-                + "<th>" + "Name" + "</th>"
+                + "<th>" + "Name" + "</th>" 
                 + "<th>" + "Location" + "</th>"
                 + "<th>" + "Seat_row" + "</th>"
                 + "<th>" + "Seat_column" + "</th>"
@@ -38,7 +38,9 @@
        
     }
 </script>
-<table id="table" border="1px" style="text-align:center;"></table>
+
+<table id="table"  border="1px" style="text-align:center;"></table>
+
 
 <table border="1px" style="text-align:center;">
     <tr>
@@ -57,7 +59,7 @@
 
     @foreach ($buses as $bus)
         <tr>
-            <td>{{$bus['operation']}}<td>
+            <td>{{$bus['operator']}}<td>
             <td>{{session('name')}}<td>
             <td>{{$bus['name']}}<td>
             <td>{{$bus['location']}}<td>

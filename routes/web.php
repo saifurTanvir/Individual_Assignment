@@ -16,20 +16,24 @@ Route::get('/', function () {
 });
 
 //login
-Route::get('/system/supportstaff/add', 'LoginController@index')->name('login');
-Route::post('/system/supportstaff/add', 'LoginController@verify');
+Route::get('/system/supportstaff/login', 'LoginController@index')->name('login');
+Route::post('/system/supportstaff/login', 'LoginController@verify');
 
 //admin
 Route::get('/system/supportstaff/admin', 'AdminController@index')->name('admin.index');
 Route::get('/system/supportstaff/admin/buses', 'AdminController@buses')->name('admin.buses');
+//add bus
+Route::get('/system/buses/add', 'AdminController@addBus')->name('admin.addBus');
+Route::post('/system/buses/add', 'AdminController@insertBus');
+
 //admin edit buss
-Route::get('/system/supportstaff/admin/bus/edit/{id}', 'AdminController@editBus')->name('admin.buses');
-Route::post('/system/supportstaff/admin/bus/edit/{id}', 'AdminController@updateBus');
+//Route::get('/system/supportstaff/admin/bus/edit/{id}', 'AdminController@editBus')->name('admin.buses');
+//Route::post('/system/supportstaff/admin/bus/edit/{id}', 'AdminController@updateBus');
 //admin delete buss
-Route::get('/system/supportstaff/admin/buses', 'AdminController@buses')->name('admin.buses');
+//Route::get('/system/supportstaff/admin/buses', 'AdminController@buses')->name('admin.buses');
 
 //search Bus
-Route::get('/system/buses/ajax/{search}', 'AdminController@searchBus')->name('admin.searchBus');
+Route::post('/system/buses/ajax/{search}', 'AdminController@searchBus')->name('admin.searchBus');
 
 
 
