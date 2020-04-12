@@ -61,4 +61,5 @@ Route::get('/system/manager/busesschedule', 'ManagerController@busSchedule')->na
 //manager add bus
 Route::get('/system/busSchedule/manager/add', 'ManagerController@addBusSchedule')->name('manager.addBusSchedule');
 Route::post('/system/busSchedule/manager/add', 'ManagerController@insertBusSchedule');
-
+//manager Search Bus schedule
+Route::post('/system/busSchedule/manager/ajax/{search}', 'ManagerController@searchBusSchedule')->name('manager.searchBusSchedule');

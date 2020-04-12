@@ -110,5 +110,13 @@ class ManagerController extends Controller
         }
     }
 
+    //Search Bus Schedule
+    public function searchBusSchedule($id){
+        //error_log($id);
+        $busSchedule = Schedule::where('scheduleId', $id)->get();
+        //error_log($bus);
+        return response()->json(['success'=> $busSchedule]);
+    }
+
    
 }
