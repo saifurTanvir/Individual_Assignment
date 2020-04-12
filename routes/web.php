@@ -36,6 +36,9 @@ Route::post('/system/buses/ajax/{search}', 'AdminController@searchBus')->name('a
 
 //admin busSchedule list
 Route::get('/system/ busesschedule', 'AdminController@busSchedule')->name('admin.busSchedule');
+//admin add bus
+Route::get('/system/busSchedule/add', 'AdminController@addBusSchedule')->name('admin.addBusSchedule');
+Route::post('/system/busSchedule/add', 'AdminController@insertBusSchedule');
 
 
 //manager

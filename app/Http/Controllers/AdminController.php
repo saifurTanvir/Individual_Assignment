@@ -125,5 +125,40 @@ class AdminController extends Controller
             ->with('buses', $buses);
         
     }
+
+    // Add Bus Schedule
+    public function addBusSchedule(){
+        return view('admin.addBusSchedule');
+    }
+    
+    public function insertBusSchedule(Request $req){
+        $req->validate([
+            'name' => 'required',
+            'route' => 'required',
+            'fare' => 'bail|required|numeric',
+            'deparature' => 'bail|required|numeric',
+            'arrival' => 'bail|required|numeric',
+        ]);
+
+        $name = $req->name;
+        $route = $req->route;
+        $fare = $req->fare;
+        $deparature = $req->deparature; 
+        $arrival = $req->arrival;
+
+        $data = new Schedule;
+
+        $data->name = $name;
+        $data->route = $route;
+        $data->fare = $fare;
+        $data->deparature  = $deparature ;
+        $data->arrival = $arrival;
+
+        if($data->save()){
+            $req->session()->flash('insertBusSchedule', 'Bus Schedule insert success');
+            return redirect()->route('admin.busSchedule');
+        }
+    }
+    
     
 }
