@@ -46,14 +46,15 @@
         
         if (confirm("After dalete it can't be restore!")) {
             $.ajax({
-            type: 'post',
+            type: 'delete',
             url: "/system/buses/"+id+"/delete",
              data : {
                        "_token": "{{ csrf_token() }}"  
                     },
                     datatype : 'html',
             success: function(response){
-
+                //alert("Come back");
+                window.location = response;
             },
             error: function(error){
                 alert(error.status);

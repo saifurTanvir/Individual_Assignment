@@ -30,7 +30,7 @@ Route::post('/system/buses/add', 'AdminController@insertBus');
 Route::get('/system/buses/{id}/edit', 'AdminController@editBus')->name('admin.editBuses');
 Route::patch('/system/buses/{id}/edit', 'AdminController@updateBus');
 //admin delete buss
-Route::post('/system/buses/{id}/delete', 'AdminController@deleteBus')->name('admin.deleteBuses');
+Route::delete('/system/buses/{id}/delete', 'AdminController@deleteBus')->name('admin.deleteBuses');
 //admin search Bus
 Route::post('/system/buses/ajax/{search}', 'AdminController@searchBus')->name('admin.searchBus');
 

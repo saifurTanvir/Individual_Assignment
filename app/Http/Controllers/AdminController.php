@@ -111,11 +111,11 @@ class AdminController extends Controller
     //Delete Bus
     public function deleteBus($id){
         $bus = Bus::find($id);
-        DB::table('buses')->where('busId', $id)->delete();
-        return redirect()->route('admin.buses');
+        Bus::where('busId', $id)->delete();
+       // return redirect()->route('admin.buses');
+       return url('/system/ buses');
     }
 
-    
     //busSchedule List
     public function busSchedule(){
         $busSchedule = Schedule::all();
