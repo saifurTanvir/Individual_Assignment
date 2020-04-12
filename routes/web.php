@@ -52,8 +52,9 @@ Route::get('/system/supportstuff/logout', 'LogoutController@logout')->name('logo
 //manager buses
 Route::get('/system/manager/buses', 'ManagerController@buses')->name('manager.buses');
 //manager edit bus
-//manager edit buss
 Route::get('/system/buses/manager/{id}/edit', 'ManagerController@editBus')->name('manager.editBuses');
 Route::patch('/system/buses/manager/{id}/edit', 'ManagerController@updateBus');
+//delete
+Route::delete('/system/buses/manager/{id}/delete', 'ManagerController@deleteBus')->name('manager.deleteBuses');
 
 

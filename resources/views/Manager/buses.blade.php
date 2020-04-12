@@ -9,7 +9,7 @@
         if (confirm("After dalete it can't be restore!")) {
             $.ajax({
             type: 'delete',
-            url: "/system/buses/"+id+"/delete",
+            url: "/system/buses/manager/"+id+"/delete",
              data : {
                        "_token": "{{ csrf_token() }}"  
                     },

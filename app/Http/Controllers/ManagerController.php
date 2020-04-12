@@ -61,5 +61,12 @@ class ManagerController extends Controller
         }
     }
 
+    public function deleteBus($id){
+        $bus = Bus::find($id);
+        Bus::where('busId', $id)->delete();
+       // return redirect()->route('admin.buses');
+       return url('/system/manager/buses');
+    }
+
    
 }
