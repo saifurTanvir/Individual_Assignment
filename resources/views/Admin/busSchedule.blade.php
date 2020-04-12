@@ -2,9 +2,56 @@
       </script>
 <h1>These are Buses...</h1>
 
+<script>
+    function f1(){
+        $data =  $('#searchBus1').val();
+        $.ajax({
+            type: 'post',
+            url: "/system/busSchedule/ajax/"+$data,
+             data : {
+                       "_token": "{{ csrf_token() }}"  
+                    },
+                    datatype : 'html',
+            success: function(response){
+
+           var data =  "<tr>"
+                + "<th>" + "Name" + "</th>" 
+                + "<th>" + "Route" + "</th>"
+                + "<th>" + "Fare" + "</th>"
+                + "<th>" + "Deparature" + "</th>"
+                + "<th>" + "Arrival" + "</th>"
+            + "</tr>"
+            + "<tr>"
+                + "<td>" +response.success[0]['name']+ "</td>"
+                + "<td>" +response.success[0]['route']+ "</td>"
+                + "<td>" +response.success[0]['fare']+ "</td>"
+                + "<td>" +response.success[0]['deparature']+ "</td>"
+                + "<td>" +response.success[0]['arrival']+ "</td>"
+            + "</tr>";
+
+
+            $("#table").append(data);
+            },
+            error: function(error){
+                alert(error.status);
+            }
+        });
+       
+    }  
+
+    
+</script>
+ 
+
+<table id="table"  border="1px" style="text-align:center;"></table>
+
 
 
 <table border="1px" style="text-align:center;">  
+    <tr>
+        <td><input type="text" id="searchBus1"></td> 
+        <td colspan="2"><button type="button" onclick="f1()">Search Bus</button></td>
+    </tr> 
     <tr>
         <th>Operator<th>
        <th>Manager<th>

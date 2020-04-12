@@ -64,7 +64,7 @@
         } 
     }
 </script>
-
+ 
 
 <table id="table"  border="1px" style="text-align:center;"></table>
 
