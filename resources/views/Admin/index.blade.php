@@ -13,3 +13,4 @@
         <td><a href="{{route('admin.addBusSchedule')}}">Add Bus Schedule</a></td>
     </tr>
 </table>
+<a href="{{route("logout")}}">Logout</a>

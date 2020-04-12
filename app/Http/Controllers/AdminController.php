@@ -97,7 +97,7 @@ class AdminController extends Controller
 
         $data->name = $name;
         $data->operator = $operator;
-        $data->location = $location;
+        $data->location = $location; 
         $data->seat_row  = $seat_row ;
         $data->seat_column = $seat_column;
         $data->company = $company;
@@ -113,8 +113,8 @@ class AdminController extends Controller
         $bus = Bus::find($id);
         Bus::where('busId', $id)->delete();
        // return redirect()->route('admin.buses');
-       return url('/system/ buses');
-    }
+       return url('/system/buses');
+    } 
 
     //busSchedule List
     public function busSchedule(){

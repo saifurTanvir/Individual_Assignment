@@ -31,6 +31,10 @@
             <td></td>
             <td><input type="submit" name="submit" value="ADD"></td>
         </tr>
+        <tr>
+            <td><a href="{{route("admin.index")}}">Back</a></td>
+            <td><a href="{{route("logout")}}">Logout</a></td>
+        </tr>
 
     </table>
 
