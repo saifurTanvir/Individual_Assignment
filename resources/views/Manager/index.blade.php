@@ -6,7 +6,7 @@
         <td><a href="{{route('manager.buses')}}">Buses List</a></td>
     </tr>
     <tr>
-        <td><a href="#">Bus ScheduleList</a></td>
+        <td><a href="{{route('manager.busSchedule')}}">Bus ScheduleList</a></td>
         <td><a href="#">Add Bus Schedule</a></td>
     </tr>
 </table>

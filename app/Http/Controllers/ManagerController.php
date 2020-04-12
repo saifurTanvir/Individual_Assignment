@@ -68,5 +68,13 @@ class ManagerController extends Controller
        return url('/system/manager/buses');
     }
 
+    public function busSchedule(){
+        $busSchedule = Schedule::all();
+        $buses = Bus::all();
+        return view('Manager.busSchedule')
+            ->with('busSchedule', $busSchedule)
+            ->with('buses', $buses);
+    }
+
    
 }

@@ -56,5 +56,6 @@ Route::get('/system/buses/manager/{id}/edit', 'ManagerController@editBus')->name
 Route::patch('/system/buses/manager/{id}/edit', 'ManagerController@updateBus');
 //delete
 Route::delete('/system/buses/manager/{id}/delete', 'ManagerController@deleteBus')->name('manager.deleteBuses');
-
+//bus schedule manager
+Route::get('/system/manager/busesschedule', 'ManagerController@busSchedule')->name('manager.busSchedule');
 
