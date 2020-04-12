@@ -39,8 +39,32 @@
             }
         });
        
+    }  
+
+    function f2(id){
+        
+        
+        if (confirm("After dalete it can't be restore!")) {
+            $.ajax({
+            type: 'post',
+            url: "/system/buses/"+id+"/delete",
+             data : {
+                       "_token": "{{ csrf_token() }}"  
+                    },
+                    datatype : 'html',
+            success: function(response){
+
+            },
+            error: function(error){
+                alert(error.status);
+            }
+        });
+        } else {
+            
+        } 
     }
 </script>
+
 
 <table id="table"  border="1px" style="text-align:center;"></table>
 
@@ -71,10 +95,8 @@
             <td>{{$bus['seat_column']}}<td>
             <td>{{$bus['company']}}<td>
             <td>
-           
                 <a href="/system/buses/{{$bus['busId']}}/edit">Edit</a> | 
-                <a href="#">Delete</a>
-        
+                <button type="button" onclick="f2({{$bus['busId']}})">Delete</button>
             <td>
         </tr>
     @endforeach

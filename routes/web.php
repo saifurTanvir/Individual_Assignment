@@ -19,22 +19,23 @@ Route::get('/', function () {
 Route::get('/system/supportstaff/login', 'LoginController@index')->name('login');
 Route::post('/system/supportstaff/login', 'LoginController@verify');
 
-//admin
+//admin index
 Route::get('/system/supportstaff/admin', 'AdminController@index')->name('admin.index');
-Route::get('/system/supportstaff/admin/buses', 'AdminController@buses')->name('admin.buses');
-//add bus
+//admin bus list
+Route::get('/system/ buses', 'AdminController@buses')->name('admin.buses');
+//admin add bus
 Route::get('/system/buses/add', 'AdminController@addBus')->name('admin.addBus');
 Route::post('/system/buses/add', 'AdminController@insertBus');
-
 //admin edit buss
 Route::get('/system/buses/{id}/edit', 'AdminController@editBus')->name('admin.editBuses');
 Route::patch('/system/buses/{id}/edit', 'AdminController@updateBus');
 //admin delete buss
-//Route::get('/system/supportstaff/admin/buses', 'AdminController@buses')->name('admin.buses');
-
-//search Bus
+Route::post('/system/buses/{id}/delete', 'AdminController@deleteBus')->name('admin.deleteBuses');
+//admin search Bus
 Route::post('/system/buses/ajax/{search}', 'AdminController@searchBus')->name('admin.searchBus');
 
+//admin busSchedule list
+Route::get('/system/ busesschedule', 'AdminController@busSchedule')->name('admin.busSchedule');
 
 
 //manager

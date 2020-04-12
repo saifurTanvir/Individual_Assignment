@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\DB;
 use App\Bus;
-use App\BusSchedule;
+use App\Schedule;
 use Validator;
 
 class AdminController extends Controller
@@ -93,7 +93,7 @@ class AdminController extends Controller
         $company = $req->company;
 
         $data = Bus::find($id);
-        error_log($data);
+        //error_log($data);
 
         $data->name = $name;
         $data->operator = $operator;
@@ -107,4 +107,23 @@ class AdminController extends Controller
             return redirect()->route('admin.buses');
         }
     }
+
+    //Delete Bus
+    public function deleteBus($id){
+        $bus = Bus::find($id);
+        DB::table('buses')->where('busId', $id)->delete();
+        return redirect()->route('admin.buses');
+    }
+
+    
+    //busSchedule List
+    public function busSchedule(){
+        $busSchedule = Schedule::all();
+        $buses = Bus::all();
+        return view('Admin.busSchedule')
+            ->with('busSchedule', $busSchedule)
+            ->with('buses', $buses);
+        
+    }
+    
 }

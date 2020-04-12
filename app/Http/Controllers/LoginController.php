@@ -23,7 +23,7 @@ class LoginController extends Controller
         $password = $req->password;
         $user = DB::table('users')
             ->where('email', $req->email)
-            ->where('password', $req->password)
+            ->where('password', $req->password) 
             ->first();
         if($user != null){
             if($user->type == "admin"){
@@ -32,6 +32,8 @@ class LoginController extends Controller
                 return redirect()->route("admin.index");
             }
             else{
+                $req->session()->put('email', $req->email);
+                $req->session()->put('name', $user->name);
                 return redirect()->route("manager.index");
             }
         }
@@ -42,3 +44,4 @@ class LoginController extends Controller
         
     }
 }
+ 

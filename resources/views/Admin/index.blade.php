@@ -8,8 +8,7 @@
         
     </tr>
     <tr>
-        <td>Buses Schedule</td>
-        <td>Add Bus Schedule</td>
-        <td>Search Bus Schedule</td>
+        <td><a href="{{route('admin.busSchedule')}}">Bus ScheduleList</a></td>
+        <td><a href="{{route('admin.addBus')}}">Add Bus</a></td>
     </tr>
 </table>
